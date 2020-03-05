@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  check_ingest:
+    runs-on: ubuntu-latest
+    name: Check elastic pipelines
+    steps:
+    - name: Check elastic pipelines
+      id: check_ingest
+      uses: pdreker/elastic-ingest-test-action@v1.0.0
+      with:
+        testdir: 'examples'
