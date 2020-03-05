@@ -3,7 +3,7 @@
 Checks an Elasticsearch ingest pipeline against test cases.
 Use case would be to check pipelines from git against expected behaviour in automated tests for CI/CD.
 
-This uses the elasticsearch ingest pipeline simulate feature (see <https://www.elastic.co/guide/en/elasticsearch/reference/current/simulate-pipeline-api.html)>)
+This uses the elasticsearch ingest pipeline simulate feature (see <https://www.elastic.co/guide/en/elasticsearch/reference/current/simulate-pipeline-api.html>)
 
 ## Usage
 
