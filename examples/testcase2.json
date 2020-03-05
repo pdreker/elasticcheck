@@ -1,0 +1,47 @@
+{
+    "pipeline": "my-pipeline",
+    "assertions" : {
+        "logmessage": "The following profiles are active: dev",
+        "thread": "main",
+        "@timestamp": "2020-02-05T10:02:57,366",
+        "loglevel": "INFO",
+        "javaclass": "com.example.app.RestApplication"
+    },
+    "input": {
+        "_source": {
+            "@timestamp": "2020-02-05T10:03:05.420Z",
+            "@metadata": {
+                "beat": "filebeat",
+                "type": "_doc",
+                "version": "7.5.2"
+            },
+            "input": {
+                "type": "log"
+            },
+            "ecs": {
+                "version": "1.1.0"
+            },
+            "host": {
+                "name": "example-backend-6cfd785f48-xmxgz"
+            },
+            "agent": {
+                "id": "f693374c-44f1-484b-9c2a-d737ac58024f",
+                "version": "7.5.2",
+                "type": "filebeat",
+                "ephemeral_id": "744bf0e3-6973-48cb-ab9f-c213e17fa329",
+                "hostname": "example-backend-6cfd785f48-xmxgz"
+            },
+            "log": {
+                "file": {
+                    "path": "/log/example-stage.log"
+                },
+                "offset": 177
+            },
+            "message": "2020-02-05T10:02:57,366 [main] INFO  com.example.app.RestApplication - The following profiles are active: dev",
+            "tags": [
+                "app",
+                "backend"
+            ]
+        }
+    }
+}

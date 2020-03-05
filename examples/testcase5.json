@@ -1,0 +1,46 @@
+{ "pipeline": "my-pipeline",
+    "assertions" : {
+        "logmessage": "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+        "thread": "main",
+        "@timestamp": "2020-02-05T10:03:06,884",
+        "loglevel": "WARN",
+        "javaclass": "o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration"
+    },
+    "input": {
+        "_source": {
+            "@timestamp": "2020-02-05T10:03:08.424Z",
+            "@metadata": {
+                "beat": "filebeat",
+                "type": "_doc",
+                "version": "7.5.2"
+            },
+            "message": "2020-02-05T10:03:06,884 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+            "log": {
+                "file": {
+                    "path": "/log/example-stage.log"
+                },
+                "offset": 596
+            },
+            "tags": [
+                "app",
+                "backend"
+            ],
+            "input": {
+                "type": "log"
+            },
+            "host": {
+                "name": "example-backend-6cfd785f48-xmxgz"
+            },
+            "agent": {
+                "ephemeral_id": "744bf0e3-6973-48cb-ab9f-c213e17fa329",
+                "hostname": "example-backend-6cfd785f48-xmxgz",
+                "id": "f693374c-44f1-484b-9c2a-d737ac58024f",
+                "version": "7.5.2",
+                "type": "filebeat"
+            },
+            "ecs": {
+                "version": "1.1.0"
+            }
+        }
+    }
+}

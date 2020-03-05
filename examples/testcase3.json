@@ -1,0 +1,47 @@
+{
+    "pipeline": "my-pipeline",
+    "assertions" : {
+        "logmessage": "Root WebApplicationContext: initialization completed in 3900 ms",
+        "thread": "main",
+        "@timestamp": "2020-02-05T10:03:01,386",
+        "loglevel": "INFO",
+        "javaclass": "o.s.web.context.ContextLoader"
+    },
+    "input": {
+        "_source": {
+            "@timestamp": "2020-02-05T10:03:05.420Z",
+            "@metadata": {
+                "beat": "filebeat",
+                "type": "_doc",
+                "version": "7.5.2"
+            },
+            "log": {
+                "offset": 291,
+                "file": {
+                    "path": "/log/example-stage.log"
+                }
+            },
+            "message": "2020-02-05T10:03:01,386 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3900 ms",
+            "tags": [
+                "app",
+                "backend"
+            ],
+            "input": {
+                "type": "log"
+            },
+            "ecs": {
+                "version": "1.1.0"
+            },
+            "host": {
+                "name": "example-backend-6cfd785f48-xmxgz"
+            },
+            "agent": {
+                "ephemeral_id": "744bf0e3-6973-48cb-ab9f-c213e17fa329",
+                "hostname": "example-backend-6cfd785f48-xmxgz",
+                "id": "f693374c-44f1-484b-9c2a-d737ac58024f",
+                "version": "7.5.2",
+                "type": "filebeat"
+            }
+        }
+    }
+}
