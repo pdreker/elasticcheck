@@ -4,6 +4,14 @@ jobs:
   check_ingest:
     runs-on: ubuntu-latest
     name: Check elastic pipelines
+    services:
+      elasticsearch:
+        image: elasticsearch:7.5.2
+        ports:
+          - 9200:9200
+        env:
+          discovery.type: "single-node"
+          script.painless.regex.enabled: "true"
     steps:
     - uses: actions/checkout@v2
     - name: Check elastic pipelines
