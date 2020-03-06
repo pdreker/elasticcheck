@@ -32,22 +32,31 @@ See examples/ folder.
 ### Pipeline Definition
 
 ```json
+
 {
-    "name": "my-pipeline",
-    "pipeline":
-    {
-        PIPELINE DEFINITION
-    }
+    "description" : "Example Backend Log Parsing",
+    "processors" : [
+        {
+            "grok" : {
+                "if": "ctx.message =~ /^\\d{4}-\\d{2}-\\d{2}/",
+                "field": "message",
+                "patterns": ["%{TIMESTAMP_ISO8601:@timestamp} \\[%{GREEDYDATA:thread}\\] %{LOGLEVEL:loglevel} %{SPACE}%{JAVACLASS:javaclass} - %{JAVALOGMESSAGE:logmessage}"]
+            }
+        }
+    ]
 }
+
 ```
 
 The pipeline definition is exactly what your would `PUT` into elasticsearch using curl. See <https://www.elastic.co/guide/en/elasticsearch/reference/current/pipeline.html>.
+
+The name of the pipeline in elasticsearch will be determined from the filename by removing any directory components and the `.json` suffix. So `examples/pipe-01.json` will becom `pipe-01`, which will need to be referenced in the testcase.
 
 ### Test Definitions
 
 ```json
 {
-    "pipeline": "my-pipeline",
+    "pipeline": "pipe-01",
     "assertions" : {
         "logmessage": "Starting RestApplication on example-backend-6cfd785f48-xmxgz with PID 7 (/app.jar started by root in /)",
         "thread": "main",
