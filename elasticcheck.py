@@ -2,6 +2,7 @@ import requests
 import json
 import argparse
 import sys
+import os
 
 parser = argparse.ArgumentParser(description='Check Elasticsearch Pipelines against testcases')
 parser.add_argument('--prepare', action='store_true', help='send specified pipelines to elasticsearch')
@@ -14,8 +15,8 @@ with open(cmdline.pipefile, 'r') as f:
 
 if cmdline.prepare:
     # input file should have been a pipeline -> send it to elasticsearch
-    pipeName = jsonInput["name"]
-    pipelineDefinition = jsonInput["pipeline"]
+    pipeName, _ = os.path.splitext(os.path.basename(cmdline.pipefile))
+    pipelineDefinition = jsonInput
     url = f'{cmdline.elasticurl}/_ingest/pipeline/{pipeName}'
     r = requests.put(url, json=pipelineDefinition)
     if r.status_code >= 200 and r.status_code < 300:
