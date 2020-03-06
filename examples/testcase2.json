@@ -1,5 +1,5 @@
 {
-    "pipeline": "my-pipeline",
+    "pipeline": "pipe-01",
     "assertions" : {
         "logmessage": "The following profiles are active: dev",
         "thread": "main",

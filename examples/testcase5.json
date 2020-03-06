@@ -1,4 +1,4 @@
-{ "pipeline": "my-pipeline",
+{ "pipeline": "pipe-01",
     "assertions" : {
         "logmessage": "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
         "thread": "main",

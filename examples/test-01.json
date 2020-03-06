@@ -1,5 +1,5 @@
 {
-    "pipeline": "my-pipeline",
+    "pipeline": "pipe-01",
     "assertions" : {
         "logmessage": "Starting RestApplication on example-backend-6cfd785f48-xmxgz with PID 7 (/app.jar started by root in /)",
         "thread": "main",

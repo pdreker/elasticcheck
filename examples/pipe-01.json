@@ -1,16 +1,12 @@
 {
-    "name": "my-pipeline",
-    "pipeline":
-    {
-        "description" : "Example Backend Log Parsing",
-        "processors" : [
-            {
-                "grok" : {
-                    "if": "ctx.message =~ /^\\d{4}-\\d{2}-\\d{2}/",
-                    "field": "message",
-                    "patterns": ["%{TIMESTAMP_ISO8601:@timestamp} \\[%{GREEDYDATA:thread}\\] %{LOGLEVEL:loglevel} %{SPACE}%{JAVACLASS:javaclass} - %{JAVALOGMESSAGE:logmessage}"]
-                }
+    "description" : "Example Backend Log Parsing",
+    "processors" : [
+        {
+            "grok" : {
+                "if": "ctx.message =~ /^\\d{4}-\\d{2}-\\d{2}/",
+                "field": "message",
+                "patterns": ["%{TIMESTAMP_ISO8601:@timestamp} \\[%{GREEDYDATA:thread}\\] %{LOGLEVEL:loglevel} %{SPACE}%{JAVACLASS:javaclass} - %{JAVALOGMESSAGE:logmessage}"]
             }
-        ]
-    }
+        }
+    ]
 }

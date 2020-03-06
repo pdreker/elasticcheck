@@ -1,5 +1,5 @@
 {
-    "pipeline": "my-pipeline",
+    "pipeline": "pipe-01",
     "assertions" : {
         "logmessage": "Root WebApplicationContext: initialization completed in 3900 ms",
         "thread": "main",

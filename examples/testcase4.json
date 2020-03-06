@@ -1,5 +1,5 @@
 {
-    "pipeline": "my-pipeline",
+    "pipeline": "pipe-01",
     "assertions" : {
         "logmessage": "Schema `example` has a version (0.0.4) that is newer than the latest available migration (0.0.2) !",
         "thread": "main",
